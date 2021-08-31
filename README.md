@@ -25,3 +25,5 @@ This initial prototype allows you to connect Dialogflow CX via Redux to a React 
 - Action types
     - Navigation
     - Model transforms
+- Dynamic Routing - Dynamic Fulfilment -> Dynamic Routes
+- HoC for Attaching suggested utterances to buttons

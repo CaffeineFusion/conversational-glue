@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/CaffeineFusion/conversational-glue/issues"
   },
-  "homepage": "https://github.com/CaffeineFusion/conversational-glue#readme"
+  "homepage": "https://github.com/CaffeineFusion/conversational-glue#readme",
+  "dependencies": {
+    "react-router-dom": "^5.2.1"
+  }
 }
