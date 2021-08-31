@@ -38,7 +38,30 @@ export const store = createStore(
 
 This reducer extracts the route object from any custom payload that is returned.
 
-Note: sample above assumes that you've already integrated message handling in a similar way to the Dialogflow CX samples using Redux
+Note: sample above assumes that you've already integrated message handling in a similar way to the Dialogflow CX samples using Redux. Data is assumed to follow the following structure:
+```
+export const sendMessage = (text, session, sender = 'user', type) => ({
+    type: ON_MESSAGE,
+    payload: { text, session, sender, type }
+})
+```
+Defined on API response as follows:
+```
+axios.post(settings.detectintent, {
+            query: action.payload.text,
+            sessionid: action.payload.session
+        }).then(onSuccess)
+     
+        function onSuccess(response) {
+            response.data.response.queryResult.responseMessages.forEach(function (item, index) {
+                if ('payload' in item){
+                    next(sendMessage(item.payload.fields, response, 'bot', 'payload'));
+                } else {
+                    next(sendMessage(item.text.text, response, 'bot', 'text'));
+                } 
+            });
+        }
+```
 
 
 ### Add routing Controller
