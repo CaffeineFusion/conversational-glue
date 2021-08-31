@@ -1,5 +1,6 @@
-const { changeRoute } = require('./changeRoute');
+const { RouteController } = require('./RouteController');
+const { createRouteReducer } = require('./routeReducer');
 
 module.exports = {
-    changeRoute
+    RouteController, createRouteReducer
 };
