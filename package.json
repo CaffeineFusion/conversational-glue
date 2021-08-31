@@ -1,0 +1,28 @@
+{
+  "name": "conversational-glue",
+  "version": "0.0.1",
+  "description": "Conversation-first libraries for website construction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaffeineFusion/conversational-glue.git"
+  },
+  "keywords": [
+    "VUI",
+    "Conversation",
+    "Dialogflow",
+    "CX"
+  ],
+  "author": "Owen Smith",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/CaffeineFusion/conversational-glue/issues"
+  },
+  "homepage": "https://github.com/CaffeineFusion/conversational-glue#readme",
+  "dependencies": {
+    "react-router-dom": "^5.2.1"
+  }
+}
