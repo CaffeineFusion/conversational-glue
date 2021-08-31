@@ -5,7 +5,7 @@ const createRouteReducer = (initialState) => {
     {
         switch (action.type) {
             case ON_MESSAGE:
-                return action.route === undefined ? state : action.route;
+                return action.text === undefined || action.text.route === undefined ? state : action.text.route;
             default:
                 return state;
         } 
