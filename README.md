@@ -48,14 +48,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { RouteController } from 'conversational-glue';
 
 // trigger the change Route method from within your React component
-class App extends Component {
-    render = () => {
-        <BrowserRouter>
-            { activeRoute && <RouteController activeRoute={activeRoute} />}
-            <Route exact path='/' component={HomePage} />
-            <Route exact path='/two' component={SecondPage} />
-        </BrowserRouter>
-    }
+(props) => {
+    const { activeRoute } = props;
+    <BrowserRouter>
+        { withRouter(<RouteController activeRoute={activeRoute} />) }
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/two' component={SecondPage} />
+    </BrowserRouter>
 }
 
 const mapStateToProps = state => ({
@@ -64,6 +63,8 @@ const mapStateToProps = state => ({
 });
 
 ```
+
+Note: You'll likely want to ensure that the chat component persists between pages and that the conversation state remains bound. 
 
 
 ## License
