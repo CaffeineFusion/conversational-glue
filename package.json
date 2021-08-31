@@ -1,6 +1,6 @@
 {
   "name": "conversational-glue",
-  "version": "0.0.5",
+  "version": "0.0.11",
   "description": "Conversation-first libraries for website construction",
   "main": "build/index.js",
   "scripts": {
