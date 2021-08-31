@@ -69,14 +69,15 @@ Finally, we add the Routing controller to our App
 Requires react-router-dom and triggers a Route change based on an input function
 ``` javascript
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { RouteController } from 'conversational-glue';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+//import { RouteController } from 'conversational-glue'; // In development
 
 // trigger the change Route method from within your React component
 (props) => {
     const { activeRoute } = props;
     <BrowserRouter>
-        { withRouter(<RouteController activeRoute={activeRoute} />) }
+        <Redirect to={activeRoute} />
+        {/* withRouter(<RouteController activeRoute={activeRoute} />) */}
         <Route exact path='/' component={HomePage} />
         <Route exact path='/two' component={SecondPage} />
     </BrowserRouter>
