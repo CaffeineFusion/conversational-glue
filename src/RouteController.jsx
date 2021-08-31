@@ -6,7 +6,7 @@ const { React, useEffect } = require('react');
 
 const RouteController = (props) => {
     useEffect(() => {
-        props.history.push(activeRoute)
+        props.history.push(props.activeRoute)
     }, [props.activeRoute]);
 };
 
