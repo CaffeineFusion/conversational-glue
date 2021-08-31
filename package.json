@@ -2,9 +2,10 @@
   "name": "conversational-glue",
   "version": "0.0.1",
   "description": "Conversation-first libraries for website construction",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/index.js --out-file build/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,12 @@
   "homepage": "https://github.com/CaffeineFusion/conversational-glue#readme",
   "dependencies": {
     "react-router-dom": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "react-dom": "^17.0.2"
   }
 }
