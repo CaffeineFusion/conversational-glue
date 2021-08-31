@@ -20,7 +20,7 @@ yarn add conversational-glue
 ## Usage
 
 ### Add custom Route Payload into Dialogflow responses as Custom payload
-First, we tag the intents that we want to navigate around the App
+First, within Dialogflow CX, we tag the intents that we want to navigate around the App
 ```javascript
 {"route": "/my_target_route"}
 ```
@@ -36,12 +36,14 @@ export const store = createStore(
     applyMiddleware(messageMiddleware));
 ```
 
+This reducer extracts the route object from any custom payload that is returned.
+
 Note: sample above assumes that you've already integrated message handling in a similar way to the Dialogflow CX samples using Redux
 
 
 ### Add routing Controller
 Finally, we add the Routing controller to our App
-Requires react-router-dom, triggers a Route change based on an input function
+Requires react-router-dom and triggers a Route change based on an input function
 ``` javascript
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
