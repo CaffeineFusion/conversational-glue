@@ -1,13 +1,12 @@
-const { ON_MESSAGE } = require('./constants');
+const { ON_MESSAGE, MESSAGE_TYPES } = require('./constants');
 
 const createRouteReducer = (initialState) => { 
-    return (state=initialState, action) => 
+    return (state="/", action) => 
     {
         switch (action.type) {
             case ON_MESSAGE:
-                if(action.payload && action.payload.entry && action.payload.entry.type === "payload"  ) {
-                    const { text } = action.payload.entry;
-                    return {...state, ...(text && { activeRoute: action.payload.entry.text })};
+                if( action.type === MESSAGE_TYPES.PAYLOAD && action.route) {
+                    return action.route;
                 }
                 return state;
             default:
