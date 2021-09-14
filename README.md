@@ -17,7 +17,14 @@ yarn add conversational-glue
 - react-router
 - redux
 
-## Usage
+## Overview - Components and Direction
+Initial designs for conversational-glue envisaged the ability for a user's conversation to control the entirety of a website experience. 
+Key elements to this design included:
+- Conversation driven website routing (early draft) - Allow the conversation to navigate a user through a website via conversation
+- Web components triggering conversation (todo) - Conversion of traditional website elements to trigger conversation via HoCs
+- Dynamic web content generation based on conversation (todo)
+
+## Usage - Conversationally driven website navigation
 
 ### Add custom Route Payload into Dialogflow responses as Custom payload
 First, within Dialogflow CX, we tag the intents that we want to navigate around the App
@@ -67,6 +74,9 @@ axios.post(settings.detectintent, {
 ### Add routing Controller
 Finally, we add the Routing controller to our App
 Requires react-router-dom and triggers a Route change based on an input function
+
+(Note: currently this example uses the Redirect component, future direction plans to use a more robust handling via React Router history paths)
+
 ``` javascript
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
@@ -93,9 +103,6 @@ const mapStateToProps = state => ({
 Note: You'll likely want to ensure that the chat component persists between pages and that the conversation state remains bound. 
 
 
-## License
-Apache 2.0
-
 ## Why? Conversation First Design
 Typical conversation integration to websites involves bolting on a new component to an existing build. This is typically isolated from the core workings of the website, and the experience is limited to the container within which the chat is surfaced and uses backend integrations to peform any interactions.
 
@@ -120,3 +127,9 @@ This initial prototype allows you to connect Dialogflow CX via Redux to a React 
     - Model transforms
 - Dynamic Routing - Dynamic Fulfilment -> Dynamic Routes
 - HoC for Attaching suggested utterances to buttons
+- Move CX response transformation to server side component
+- Create replacement Reducer for DF Sample Reducer
+
+
+## License
+Apache 2.0
