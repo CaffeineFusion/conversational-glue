@@ -25,6 +25,10 @@ Key elements to this design included:
 - Dynamic web content generation based on conversation (todo)
 
 ## Usage - Conversationally driven website navigation
+The following steps allow us to connect a Conversation in Dialogflow CX to our website navigation in React.
+This could be used, for example, to navigate a user through a registration process based on the conversation.
+
+Note: You'll likely want to ensure that the chat component persists between pages and that the conversation state remains bound so that the page changes _around_ the conversation. The conversation component becomes the spine of the website.
 
 ### Add custom Route Payload into Dialogflow responses as Custom payload
 First, within Dialogflow CX, we tag the intents that we want to navigate around the App
@@ -99,8 +103,6 @@ const mapStateToProps = state => ({
 });
 
 ```
-
-Note: You'll likely want to ensure that the chat component persists between pages and that the conversation state remains bound. 
 
 
 ## Why? Conversation First Design
